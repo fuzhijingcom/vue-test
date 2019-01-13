@@ -11,14 +11,22 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api': {
+      '/api5': {
         // 测试环境
         target: 'https://api5.c3w.cc',  // 接口域名
         changeOrigin: true,  //是否跨域
         pathRewrite: {
+            '^/api5': ''   //需要rewrite重写的,
+        }              
+      },
+      '/api': {
+        // 测试环境
+        target: 'https://api.c3w.cc',  // 接口域名
+        changeOrigin: true,  //是否跨域
+        pathRewrite: {
             '^/api': ''   //需要rewrite重写的,
         }              
-    }
+      }
     },
 
     // Various Dev Server settings

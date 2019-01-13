@@ -34,6 +34,16 @@ export default {
       //   // 请求失败回调
       // });
 
+      this.$ajax.get('/api/ershou/my/delete_post',{
+            params: obj
+        })
+       .then((res) => {
+         // 请求成功回调
+           console.log(res)
+       }, () => {
+         // 请求失败回调
+       });
+
       console.log("44444");
     },
     ddd() {
@@ -45,7 +55,18 @@ export default {
         pageSize: 20
       };
 
-      
+
+      this.$ajax.get('/api5/ershou/my/delete_post',{
+            params: obj
+        })
+       .then((res) => {
+         // 请求成功回调
+           console.log(res.data)
+          alert(res.data.msg)
+
+       }, () => {
+         // 请求失败回调
+       });
 
       console.log("请求");
     }
